@@ -2,7 +2,7 @@ function adicionarFilme() {
   var filmeFavorito = document.getElementById("filme").value;
 
   if (filmeFavorito.endsWith(".jpg")) {
-      listarFilmesNaTela();    
+      listarFilmesNaTela(filmeFavorito);    
   } else {
       console.error("Endereço do filme inválido")
   }
@@ -10,8 +10,8 @@ function adicionarFilme() {
   document.getElementById("filme").value = "";
 }
 
-function listarFilmesNaTela(filmeFavorito) {
-    var elementoFilmeFavotiro = "<img src=" + filmeFavorito + ">";
+function listarFilmesNaTela(filme) {
+    var elementoFilmeFavotiro = "<img src=" + filme + ">";
     var elementoListaFilmes = document.getElementById("listaFilmes");
     elementoListaFilmes.innerHTML = elementoListaFilmes.innerHTML + elementoFilmeFavotiro;
 }
